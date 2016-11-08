@@ -24,6 +24,18 @@ public class Main
 {
 System.out.print(arr[k]+" ");
 }*/
+        for(int i = l ; i > 0 ; i--)
+        {
+            for(int j = 0 ; j < i ; j++)
+            {
+
+                if( arr[j] > arr[j+1] ){
+                    int tmp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = tmp;
+                }
+            }
+        }
         sum(arr, l);
         min(arr, l, arrravno);
         max(arr, l, arrravno);
@@ -37,21 +49,8 @@ System.out.print(arr[k]+" ");
     {
         if (arrravno==0)
             System.out.println("min: все эл. массива равны");
-        else{
-            for(int i = l ; i > 0 ; i--)
-            {
-                for(int j = 0 ; j < i ; j++)
-                {
-
-                    if( arr[j] > arr[j+1] ){
-                        int tmp = arr[j];
-                        arr[j] = arr[j+1];
-                        arr[j+1] = tmp;
-                    }
-                }
-            }
+        else
             System.out.println("min:"+arr[0]);
-        }
     }
 
     public static void max(int[] arr,int l, int arrravno)
